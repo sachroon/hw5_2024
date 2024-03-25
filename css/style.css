@@ -1,0 +1,163 @@
+@keyframes mymove {
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1}
+}
+
+
+body{
+    font-family: "Poppins", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+
+a:link, a:visited {
+    color: #3835fc;
+    text-decoration: underline;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Style the links so that they have the same color even after they have been visited. This is a “challenge” problem. You should not give or receive help when completing it. */
+
+
+.card > header{
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+
+div.card  {
+    border-radius: 50px 50px 0 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 0 1 450px;
+}
+/* Steps 7 and 8 go together.  You won’t have the right “look” until you finish both.
+
+Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements.  You can see that in the mobile view they all have the same width. 
+
+
+/* Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically.
+ */
+
+.pricing{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+ /* Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically. */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.gallery image{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Edit the css for the gallery class to use flex to match our example. (You may want to look at the screen shots from 1200px and 1500px as well -  the changes are not from media queries, but from the use of flex. */
+
+
+@media (min-width: 900px){
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav_links {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .pricing {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .card {
+        flex: 0 1 275px;
+    }
+    body > header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    main {
+        margin-top: 100px;
+    }
+
+}
+/*
+Edit the css for the header tag (all instances) and the nav_links class to match our example using flex-properties. The logo should be as far to the left as possible and the links as far to the right as possible. Use flex properties, NOT position properties. */
+
+@media (prefers-reduced-motion: reduce) {
+    .logo {
+    animation: none;
+    }
+}
+
+  /* Media query when the page is printed in portrait mode. */
+
+@media print and (orientation: portrait){
+
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: space-around;}
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 150px;
+    }
+
+    .pricing {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .card {
+        flex: 0 1 275px;
+        border: solid 2px #45ADDD;
+        flex: 0 1 325px;
+    }
+
+    .gallery, #gallery {
+        display: none;
+    }
+
+    main ul > li:nth-child(2)::after {
+        content: ' 👍'; /* Space before the emoji to ensure some spacing */
+    }
+}
